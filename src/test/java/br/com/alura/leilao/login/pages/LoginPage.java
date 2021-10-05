@@ -9,15 +9,15 @@ import br.com.alura.leilao.leiloes.page.AuctionPage;
 
 public class LoginPage {
 
-	private static final String URL_LOGIN = "http://localhost:8080/login";
-	private static final String URL_LOGIN_ERROR = "http://localhost:8080/login?error";
+	private static final String LOGIN_URL = "http://localhost:8080/login";
+	private static final String LOGIN_ERROR_URL = "http://localhost:8080/login?error";
 
 	private WebDriver browser;
 
 	public LoginPage() {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
 		this.browser = new ChromeDriver();
-		this.browser.navigate().to(URL_LOGIN);
+		this.browser.navigate().to(LOGIN_URL);
 	}
 
 	public void close() {
@@ -48,10 +48,10 @@ public class LoginPage {
 	}
 
 	public boolean isLoginUrl() {
-		return browser.getCurrentUrl().equals(URL_LOGIN);
+		return browser.getCurrentUrl().equals(LOGIN_URL);
 	}
 	
 	public boolean isLoginErrorUrl() {
-		return browser.getCurrentUrl().equals(URL_LOGIN_ERROR);
+		return browser.getCurrentUrl().equals(LOGIN_ERROR_URL);
 	}
 }

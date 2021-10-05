@@ -8,7 +8,8 @@ import br.com.alura.leilao.leiloes.pages.AuctionPageRegister;
 
 public class AuctionPage {
 	
-	private static final String URL_AUCTION_FORM = "http://localhost:8080/leiloes/new";
+	public static final String AUCTION_FORM_URL = "http://localhost:8080/leiloes/new";
+	public static final String AUCTIONS_URL = "http://localhost:8080/leiloes";
 
 	private WebDriver browser;
 	
@@ -21,7 +22,7 @@ public class AuctionPage {
 	}
 
 	public AuctionPageRegister navigateToAuctionForm() {
-		this.browser.navigate().to(URL_AUCTION_FORM);
+		this.browser.navigate().to(AUCTION_FORM_URL);
 		return new AuctionPageRegister(this.browser);
 	}
 

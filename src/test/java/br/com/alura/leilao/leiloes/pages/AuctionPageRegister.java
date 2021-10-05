@@ -25,4 +25,16 @@ public class AuctionPageRegister {
 		
 		return new AuctionPage(this.browser);
 	}
+
+	public boolean isRegisterPage() {
+		return browser.getCurrentUrl().equals(AuctionPage.AUCTIONS_URL);
+	}
+
+	public boolean hasValidationMessages() {
+		String pageSource = this.browser.getPageSource();
+		return pageSource.contains("minimo 3 caracteres")
+				&& pageSource.contains("não deve estar em branco")
+					&& pageSource.contains("deve ser um valor maior de 0.1")
+						&& pageSource.contains("deve ser uma data no formato dd/MM/yyyy");
+	}
 }
