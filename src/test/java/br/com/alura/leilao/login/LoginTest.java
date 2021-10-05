@@ -7,7 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import br.com.alura.leilao.login.pageobject.LoginPage;
+import br.com.alura.leilao.login.pages.LoginPage;
 
 public class LoginTest {
 
