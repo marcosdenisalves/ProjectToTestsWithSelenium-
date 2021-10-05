@@ -1,27 +1,19 @@
 package br.com.alura.leilao.login.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
+import br.com.alura.leilao.PageObject;
 import br.com.alura.leilao.leiloes.page.AuctionPage;
 
-public class LoginPage {
+public class LoginPage extends PageObject {
 
 	private static final String LOGIN_URL = "http://localhost:8080/login";
 	private static final String LOGIN_ERROR_URL = "http://localhost:8080/login?error";
 
-	private WebDriver browser;
-
 	public LoginPage() {
-		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
-		this.browser = new ChromeDriver();
+ 		super(null);
 		this.browser.navigate().to(LOGIN_URL);
-	}
-
-	public void close() {
-		this.browser.quit();
 	}
 
 	public LoginPage fillLoginForm(String login, String password) {

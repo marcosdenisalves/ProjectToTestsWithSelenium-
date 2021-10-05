@@ -4,21 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import br.com.alura.leilao.PageObject;
 import br.com.alura.leilao.leiloes.pages.AuctionPageRegister;
 
-public class AuctionPage {
+public class AuctionPage extends PageObject{
 	
 	public static final String AUCTION_FORM_URL = "http://localhost:8080/leiloes/new";
 	public static final String AUCTIONS_URL = "http://localhost:8080/leiloes";
 
-	private WebDriver browser;
 	
 	public AuctionPage(WebDriver browser) {
-		this.browser = browser;
-	}
-
-	public void close() {
-		this.browser.quit();
+		super(browser);
 	}
 
 	public AuctionPageRegister navigateToAuctionForm() {
